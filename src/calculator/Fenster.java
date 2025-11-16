@@ -14,10 +14,12 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Component;
 import java.awt.ComponentOrientation;
+import javax.swing.JTextField;
 
 public class Fenster extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -40,105 +42,110 @@ public class Fenster extends JFrame {
 	 */
 	public Fenster() {
 		setResizable(false);
-		setSize(new Dimension(320, 450));
+		setSize(new Dimension(310, 485));
 		getContentPane().setBounds(new Rectangle(0, 0, 400, 700));
 		getContentPane().setLayout(null);
 		
-		JButton btnNewButton = new JButton("7");
-		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton.setBounds(20, 130, 60, 60);
-		getContentPane().add(btnNewButton);
+		JButton seven = new JButton("7");
+		seven.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		seven.setBounds(20, 180, 60, 60);
+		getContentPane().add(seven);
 		
-		JButton btnNewButton_1 = new JButton("8");
-		btnNewButton_1.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(85, 130, 60, 60);
-		getContentPane().add(btnNewButton_1);
+		JButton eight = new JButton("8");
+		eight.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		eight.setBounds(85, 180, 60, 60);
+		getContentPane().add(eight);
 		
-		JButton btnNewButton_2 = new JButton("9");
-		btnNewButton_2.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_2.setBounds(150, 130, 60, 60);
-		getContentPane().add(btnNewButton_2);
+		JButton nine = new JButton("9");
+		nine.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		nine.setBounds(150, 180, 60, 60);
+		getContentPane().add(nine);
 		
-		JButton btnNewButton_3 = new JButton("4");
-		btnNewButton_3.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3.setBounds(20, 195, 60, 60);
-		getContentPane().add(btnNewButton_3);
+		JButton four = new JButton("4");
+		four.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		four.setBounds(20, 245, 60, 60);
+		getContentPane().add(four);
 		
-		JButton btnNewButton_3_1 = new JButton("5");
-		btnNewButton_3_1.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1.setBounds(85, 195, 60, 60);
-		getContentPane().add(btnNewButton_3_1);
+		JButton fiive = new JButton("5");
+		fiive.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		fiive.setBounds(85, 245, 60, 60);
+		getContentPane().add(fiive);
 		
-		JButton btnNewButton_3_1_1 = new JButton("6");
-		btnNewButton_3_1_1.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_1.setBounds(150, 195, 60, 60);
-		getContentPane().add(btnNewButton_3_1_1);
+		JButton six = new JButton("6");
+		six.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		six.setBounds(150, 245, 60, 60);
+		getContentPane().add(six);
 		
-		JButton btnNewButton_3_1_2 = new JButton("1");
-		btnNewButton_3_1_2.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_2.setBounds(20, 260, 60, 60);
-		getContentPane().add(btnNewButton_3_1_2);
+		JButton one = new JButton("1");
+		one.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		one.setBounds(20, 310, 60, 60);
+		getContentPane().add(one);
 		
-		JButton btnNewButton_3_1_3 = new JButton("2");
-		btnNewButton_3_1_3.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_3.setBounds(85, 260, 60, 60);
-		getContentPane().add(btnNewButton_3_1_3);
+		JButton two = new JButton("2");
+		two.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		two.setBounds(85, 310, 60, 60);
+		getContentPane().add(two);
 		
-		JButton btnNewButton_3_1_4 = new JButton("3");
-		btnNewButton_3_1_4.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_4.setBounds(150, 260, 60, 60);
-		getContentPane().add(btnNewButton_3_1_4);
+		JButton three = new JButton("3");
+		three.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		three.setBounds(150, 310, 60, 60);
+		getContentPane().add(three);
 		
-		JButton btnNewButton_3_1_5 = new JButton("0");
-		btnNewButton_3_1_5.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_5.setBounds(20, 325, 125, 60);
-		getContentPane().add(btnNewButton_3_1_5);
+		JButton zero = new JButton("0");
+		zero.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		zero.setBounds(20, 375, 125, 60);
+		getContentPane().add(zero);
 		
-		JButton btnNewButton_3_1_6 = new JButton(",");
-		btnNewButton_3_1_6.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_6.setBounds(150, 325, 60, 60);
-		getContentPane().add(btnNewButton_3_1_6);
+		JButton comma = new JButton(",");
+		comma.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		comma.setBounds(150, 375, 60, 60);
+		getContentPane().add(comma);
 		
-		JButton btnNewButton_3_1_6_1 = new JButton("=");
-		btnNewButton_3_1_6_1.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_6_1.setBounds(215, 325, 60, 60);
-		getContentPane().add(btnNewButton_3_1_6_1);
+		JButton equals = new JButton("=");
+		equals.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		equals.setBounds(215, 375, 60, 60);
+		getContentPane().add(equals);
 		
-		JButton btnNewButton_3_1_6_1_1 = new JButton("x");
-		btnNewButton_3_1_6_1_1.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_6_1_1.setBounds(215, 130, 60, 60);
-		getContentPane().add(btnNewButton_3_1_6_1_1);
+		JButton times = new JButton("x");
+		times.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		times.setBounds(215, 180, 60, 60);
+		getContentPane().add(times);
 		
-		JButton btnNewButton_3_1_6_1_2 = new JButton("-");
-		btnNewButton_3_1_6_1_2.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_6_1_2.setBounds(215, 195, 60, 60);
-		getContentPane().add(btnNewButton_3_1_6_1_2);
+		JButton minus = new JButton("-");
+		minus.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		minus.setBounds(215, 245, 60, 60);
+		getContentPane().add(minus);
 		
-		JButton btnNewButton_3_1_6_1_3 = new JButton("+");
-		btnNewButton_3_1_6_1_3.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_6_1_3.setBounds(215, 260, 60, 60);
-		getContentPane().add(btnNewButton_3_1_6_1_3);
+		JButton plus = new JButton("+");
+		plus.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		plus.setBounds(215, 310, 60, 60);
+		getContentPane().add(plus);
 		
-		JButton btnNewButton_3_1_6_1_4 = new JButton("/");
-		btnNewButton_3_1_6_1_4.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_6_1_4.setBounds(215, 65, 60, 60);
-		getContentPane().add(btnNewButton_3_1_6_1_4);
+		JButton divide = new JButton("/");
+		divide.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		divide.setBounds(215, 115, 60, 60);
+		getContentPane().add(divide);
 		
-		JButton btnNewButton_3_1_6_1_4_1 = new JButton("C");
-		btnNewButton_3_1_6_1_4_1.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_6_1_4_1.setBounds(150, 65, 60, 60);
-		getContentPane().add(btnNewButton_3_1_6_1_4_1);
+		JButton clear = new JButton("C");
+		clear.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		clear.setBounds(150, 115, 60, 60);
+		getContentPane().add(clear);
 		
-		JButton btnNewButton_3_1_6_1_4_2 = new JButton("CE");
-		btnNewButton_3_1_6_1_4_2.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_6_1_4_2.setBounds(85, 65, 60, 60);
-		getContentPane().add(btnNewButton_3_1_6_1_4_2);
+		JButton clearEntry = new JButton("CE");
+		clearEntry.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		clearEntry.setBounds(85, 115, 60, 60);
+		getContentPane().add(clearEntry);
 		
-		JButton btnNewButton_3_1_6_1_4_3 = new JButton("<html><div style='text-align:left;'>DEL</div></html>");
-		btnNewButton_3_1_6_1_4_3.setActionCommand("<html><div style='text-align:left; padding-left:-10px;'>DEL</div></html>");
-		btnNewButton_3_1_6_1_4_3.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		btnNewButton_3_1_6_1_4_3.setBounds(20, 65, 60, 60);
-		getContentPane().add(btnNewButton_3_1_6_1_4_3);
+		JButton delete = new JButton("<html><div style='text-align:left;'>DEL</div></html>");
+		delete.setActionCommand("<html><div style='text-align:left; padding-left:-10px;'>DEL</div></html>");
+		delete.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		delete.setBounds(20, 115, 60, 60);
+		getContentPane().add(delete);
+		
+		textField = new JTextField();
+		textField.setBounds(20, 11, 256, 92);
+		getContentPane().add(textField);
+		textField.setColumns(10);
 
 	}
 }
