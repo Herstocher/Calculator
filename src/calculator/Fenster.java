@@ -1,11 +1,11 @@
 package calculator;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Rectangle;
+import java.awt.event.ActionListener;
 import java.awt.Dimension;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
@@ -21,23 +21,8 @@ public class Fenster extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Fenster frame = new Fenster();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	
+	
 	/**
 	 * Create the frame.
 	 */
@@ -45,7 +30,7 @@ public class Fenster extends JFrame {
 		setMinimumSize(new Dimension(300, 400));
 		
 		setResizable(true);
-		setSize(new Dimension(98, 220));
+		setSize(new Dimension(100, 220));
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		textField = new JTextField();
@@ -69,10 +54,10 @@ public class Fenster extends JFrame {
 		clearEntry.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		panel.add(clearEntry);
 		
-		JButton clear = new JButton("C");
-		clear.setMinimumSize(new Dimension(80, 40));
-		clear.setFont(new Font("Segoe UI", Font.PLAIN, 15));
-		panel.add(clear);
+		JButton percent = new JButton("%");
+		percent.setMinimumSize(new Dimension(80, 40));
+		percent.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		panel.add(percent);
 		
 		JButton divide = new JButton("/");
 		divide.setMinimumSize(new Dimension(80, 40));
@@ -159,5 +144,21 @@ public class Fenster extends JFrame {
 		equals.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		panel.add(equals);
 
+	}
+	
+	public JTextField getTextField() {
+		return textField;
+	}
+	
+	public void addButtonListener(ActionListener listener) {
+		for (Component c : getContentPane().getComponents()) {
+			if (c instanceof JPanel) {
+				for (Component btn : ((JPanel) c).getComponents()) {
+					if (btn instanceof JButton) {
+						((JButton) btn).addActionListener(listener);
+					}
+				}
+			}
+		}
 	}
 }
