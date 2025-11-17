@@ -37,6 +37,7 @@ public class Fenster extends JFrame {
 		textField.setText("");
 		textField.setFont(new Font("Segoe UI", Font.PLAIN, 24));
 		textField.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField.setEditable(false);
 		getContentPane().add(textField, BorderLayout.NORTH);
 		textField.setColumns(10);
 		
