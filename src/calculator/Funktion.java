@@ -36,6 +36,14 @@ public class Funktion implements ActionListener {
 					currentInput = currentInput.substring(0, currentInput.length() - 1);
 				}
 				break;
+			case "%":
+				try {
+					double val = Double.parseDouble(currentInput.replace(",", "."));
+					currentInput = String.valueOf(val / 100);
+				} catch (Exception ex) {
+					currentInput = "Error";
+				}
+				break;
 			case "=":
 				try {
 					currentInput = String.valueOf(eval(currentInput));
@@ -62,6 +70,7 @@ public class Funktion implements ActionListener {
 		StringBuilder  number = new StringBuilder();
 		
 		//Input in Teile zerlegen
+		
 		for (char c : expr.toCharArray()) {
 			if (Character.isDigit(c) || c == '.') {
 				number.append(c);
@@ -78,21 +87,41 @@ public class Funktion implements ActionListener {
 			tokens.add(number.toString());
 		}
 		
-		//Addition und Substraktion
+		
+		//Zuerst Mal und Geteilt
+		
+		for (int i = 0; i < tokens.size(); i++) {
+			if (tokens.get(i).equals("x") || tokens.get(i).equals("*") || tokens.get(i).equals("/")) {
+				
+				//Aufteilen in links und rechts
+				double left = Double.parseDouble(tokens.get(i - 1));
+				double right = Double.parseDouble(tokens.get(i + 1));
+				double result = tokens.get(i).equals("/") ? left / right : left * right;
+				
+				tokens.set(i-1, String.valueOf(result));
+				tokens.remove(i);	//Operator entfernen
+				tokens.remove(i);	//rechte Zahl entfernen
+				i--;
+			}
+		}
+		
+		//Addieren und Subtrahieren
 		
 		double result = Double.parseDouble(tokens.get(0));
-		for (int i = 1; i < tokens.size(); i += 2) {
+		for (int i = 1; i < tokens.size(); i +=2) {
 			String op = tokens.get(i);
-			double value = Double.parseDouble(tokens.get(i + 1));
+			double val = Double.parseDouble(tokens.get(i + 1));
 			if (op.equals("+")) {
-				result += value;
+				result += val;
 			} else if (op.equals("-")) {
-				result -= value;
+				result -= val;
 			}
 		}
 		
 		return result;
+		
+		
 	}
-
+	
 
 }
